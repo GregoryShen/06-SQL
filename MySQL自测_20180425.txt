@@ -1,0 +1,32 @@
+﻿1.初涉MySQL
+------------
+1.说明文档
+2.是在my.cnf中修改default-
+3.图形化界面：打开计算机服务管理，找到mysql的进程，然后右键点击打开/关闭
+  命令行：net start/stop mysql
+4.mysql -u phpadmin -h 127.0.0.1 -p 3306 -P admin>
+5.1)quit
+  2)/q
+  3)bye
+6.prompt xxxx
+  
+7.prompt \t \u@\h \dbname
+8.mysql --version
+  SELECT VERSION();
+9.SHOW TIME();
+10.SHOW USER();
+11.1)关键字要大写
+   2)数据或自定义字段要小写
+   3）每句话末尾以分号结尾
+12.SHOW DATABASES;
+13.1) CREATE DATABASE test;
+   2) CREATE DATABASE IF NOT EXIST test;
+===> CREATE DATABASE IF NOT EXISTS <db_name>;
+
+   3) CREATE DATABASE test CHARACTER SET gbk;
+14.SHOW WARNINGS;
+15.SHOW CREATE DATABASE test;
+16.ALTER DATABASE test CHARACTER SET utf8;
+17.DROP DATABASE test;
+18.DROP DATABASE IF EXIST test;
+===> DROP DATABASE IF EXISTS <db_name>;

@@ -1,0 +1,72 @@
+1. 初涉MySQL
+-----------------
+12.SHOW DATABASES;
+13.1）CREATE DATABASE <db_name>;
+   2) CREATE DATABASE IF NOT EXISTS <db_name>;
+   3) CREATE DATABASE IF NOT EXISTS <db_name> CHARACTER SET gbk;
+14.SHOW WARNINGS;
+15.SHOW CREATE DATABASE <db_name>;
+16.ALTER DATABASE <db_name> CHARACTER SET = utf8;
+17.DROP DATABASE <db_name>;
+18.DROP DATABASE IF EXISTS <db_name>;
+
+2. 数据类型与操作数据表
+------------------
+1. TINYINT 1字节 有符号值-128～127（-2^7～2^7-1) 无符号值0～255（0～2^8-1)
+   SMALLINT 2字节 有符号值-32768～32767（-2^15～2^15-1)无符号值0～65535（0～2^16-1)
+   MEDIUMINT 3字节
+   INT 4字节
+   BIGINT 8字节
+2. M是数字总位数，D是小数点后面的位数
+   如果M和D被省略，根据硬件允许的限制来保存值。
+3. 1970.1.1 00：00 - 2037年的某个值
+4. 0-255 如果不足会用空格补齐
+5. 0-65535
+6. 表示从value1, value2,...中任选一个，最多可以有65535个值
+7. 表示value1,value2,...的排列组合，最多可以有64个值
+8. USE <db_name>;
+9. SELECT DATABASE();
+10.CREATE TABLE [IF NOT EXISTS] table_name(
+       column_name data_type,
+       ...
+   );
+11.SHOW TABLES FROM <db_name>;
+12.SHOW COLUMNS FROM <db_name>;
+13.INSERT INTO <tbl_name>(col_name,...) VALUES(val,...)
+   列名称可以省略，如果省略的话就要为全部字段赋值
+14.SELECT * FROM <tbl_name>;
+15.起始值为1
+   整型或浮点型，如果是浮点型则小数位需为0
+   对应的字段应为主键
+16.1个主键约束，任一个唯一约束
+17.主键不可以为空，唯一约束可以为空
+18.sex ENUM('男','女','保密') DEFAULT '保密';
+
+
+4.操作数据表中的记录
+------------------------
+1. INSERT users VALUES(DEFAULT,'Tom',3*7-5,1),(NULL,'Rose',md5('123'),DEFAULT,0);
+2. UPDATE users SET age = age + 5;
+   UPDATE users SET age = age - id, sex = 0;
+   UPDATE users SET age = age + 10 WHERE id % 2 = 0;
+3. DELETE FROM users WHERE id = 6;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

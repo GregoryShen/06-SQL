@@ -1,0 +1,10 @@
+参照别的表更新本表
+1.创建表
+2.通过insert select 把记录写入到新创建的表
+3.多表更新
+
+
+
+创建数据表的同时将查询结果插入到数据表
+
+CREATE TABLE [IF NOT EXISTS] tbl_name [(create_definition,...)] select_statement
