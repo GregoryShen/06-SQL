@@ -1,0 +1,24 @@
+图解SQL面试题：经典50题   https://zhuanlan.zhihu.com/p/38354000
+
+
+2. 汇总分析
+汇总分析
+    1. 查询课程编号为“0002“的总成绩
+       select sum(成绩) from score where 课程号 = '0002';
+       (我的写法: select 课程号, sum(成绩) from score where 课程号 = '0002';)
+    2. 查询选了课程的学生人数
+       select count(distinct 学号) as 学生人数 from score;    这道题要注意理解题意, 和一开始想的不一样
+分组
+    1. 查询各科成绩最高和最低的分
+       SELECT 课程号, MAX(成绩) AS 最高分, MIN(成绩) AS 最低分 FROM score GROUP BY 课程号;
+    2. 查询每门课程被选修的学生数
+       SELECT 课程号, count(学号) AS 学生数 from score GROUP BY 课程号;
+    3. 查询男生、女生数
+       SELECT 性别, COUNT(*) AS 人数 FROM student GROUP BY 性别;
+分组结果条件
+
+
+5. SQL 高级功能: 窗口函数
+    1. 查询学生平均成绩及其名次
+    2. 按各科成绩进行排序, 并显示排名
+    3. 查询每门功课成绩最好的前两名学生姓名
